@@ -19,12 +19,17 @@ Provided links
 Total pdf files are 39 annual reports, 11 research reports and 30 brochures.
 
 I can only use GPT2 model with the limitation of resources with no GPU.
+That model work properly with max_new_tokens=50, otherwise it throws "IndexError: index out of range in self".
 
 <!-- %cd ./model_gpt2
 !git clone https://huggingface.co/anas-awadalla/gpt2-span-head-few-shot-k-16-finetuned-squad-seed-0 -->
 
 # Task2
 In the prompt attemp, the result seems a little bit fine but from the web application, the result is totally difference. The model seems really bad. It is because of dataset and resource limitation.
+
+When providing unrelated information, my chatbot reply with padding messages or text from pretrained model. Totally wrong answer!
+
+![Unrelated information response](figures/ait_chatbot_unrelated_information.png)
 
 # Task3
 Users can type anything related to AIT and AIT_Chatbot will reply by retrieve relevant documents from a database. The chain dictionary stores questions, answers, and chat_history and returns both the generated response and the corresponding source documents.
